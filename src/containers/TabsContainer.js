@@ -3,6 +3,7 @@ import API from "../services/api/API"
 import Bills from "./BillsContainer"
 import Transactions from "./TransactionsController"
 import TabsButton from "../components/Button"
+import Title from "../components/Title"
 
 export default class Tabs extends Component {
 
@@ -43,7 +44,7 @@ export default class Tabs extends Component {
                     bills={this.potentialBills()}
                 />
                 break;
-            deefault:
+            default:
             return "hello"
                 
         }
@@ -51,11 +52,14 @@ export default class Tabs extends Component {
 
     render() {
         const { page } = this.state
+
+        const pageCondition = (page === "Bills" ? "Transactions" : "Bills")
         return (
             <div>
+                <Title title={page}/>
                 <TabsButton 
-                page={page}  
-                setPage={() => this.setPage(page === "Bills" ? "Transactions" : "Bills")}/>
+                page={pageCondition}  
+                setPage={() => this.setPage(pageCondition)}/>
                 {this.renderComponents()}
             </div>
         )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Bill from "../components/Bill"
 
+
 export default class BillsContainer extends Component {
     render() {
 
@@ -11,7 +12,7 @@ export default class BillsContainer extends Component {
                     <Bill
                     {...bill}
                     />
-                    )}
+                )}
             </div>
         )
     }
