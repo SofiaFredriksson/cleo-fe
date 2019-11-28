@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Bill from "../components/Bill"
+import BillContainer from './BillContainer'
 // import Loader from "../components/Loader"
 
 
@@ -11,10 +12,7 @@ export default class BillsContainer extends Component {
         return (
             <div>
                 {bills.map(bill => 
-                    <Bill
-                    key={bill.id}
-                    {...bill}
-                    />
+                    <BillContainer bill={bill}/>
                 )}
             </div>
         )

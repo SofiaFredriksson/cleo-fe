@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Bill from "../components/Bill"
+import  BillContainer from  "./BillContainer"
 
 
 export default class TransactionsController extends Component {
@@ -10,10 +10,7 @@ export default class TransactionsController extends Component {
         return (
             <div>
                 {bills.map(bill => 
-                    <Bill
-                    key={bill.id}
-                    {...bill}
-                    />
+                    <BillContainer bill={bill}/>
                 )}
             </div>
         )
