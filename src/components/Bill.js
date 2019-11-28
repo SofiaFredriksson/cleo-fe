@@ -1,4 +1,5 @@
 import React from 'react'
+import { imgUrl } from "../services/shared/constants"
 
 export default function Bill({name, iconUrl, isBill}) {
     return (
@@ -9,7 +10,7 @@ export default function Bill({name, iconUrl, isBill}) {
                 </h4>
                 <img 
                 className="icon-img"
-                src={iconUrl} 
+                src={imgUrl.emoji}
                 alt={name}
                 />
 

@@ -6,6 +6,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -19,5 +21,23 @@ body {
 
 .icon-img {
   width: 50%;
-  
+}
+
+.title {
+  text-align: center;
+}
+
+.page-button {
+  padding:10px 20px;
+	border-radius:3px;
+	background:#ccc;
+	font-size:16px;
+  color:#333;
+  margin: 0 auto;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
 }

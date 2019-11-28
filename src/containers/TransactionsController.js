@@ -11,6 +11,7 @@ export default class TransactionsController extends Component {
             <div>
                 {bills.map(bill => 
                     <Bill
+                    key={bill.id}
                     {...bill}
                     />
                 )}

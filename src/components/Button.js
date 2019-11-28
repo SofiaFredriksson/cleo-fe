@@ -2,11 +2,12 @@ import React from 'react'
 
 export default function Button({page, setPage}) {
     return (
-        <div>
+        <div className="card">
             <button
-                onClick={setPage}
+            className="page-button"
+            onClick={setPage}
             >
-                {page}
+            {page}
             </button>
         </div>
     )

@@ -4,17 +4,23 @@ import Bills from "./BillsContainer"
 import Transactions from "./TransactionsController"
 import TabsButton from "../components/Button"
 import Title from "../components/Title"
+import Loader from "../components/Loader"
+
 
 export default class Tabs extends Component {
 
     state = {
         bills: [],
         page: "Bills",
+
     }
 
     componentDidMount(){
         API.getBills()
-        .then(bills => this.setState({bills}))
+        .then(bills => this.setState({
+            bills,
+
+        }))
     }
 
     activeBills = () => {
@@ -38,14 +44,12 @@ export default class Tabs extends Component {
                 return <Bills 
                     bills={this.activeBills()}
                 />
-                break;
             case "Transactions":
                 return <Transactions
                     bills={this.potentialBills()}
                 />
-                break;
             default:
-            return "hello"
+            return <Loader />
                 
         }
     }
@@ -54,6 +58,7 @@ export default class Tabs extends Component {
         const { page } = this.state
 
         const pageCondition = (page === "Bills" ? "Transactions" : "Bills")
+        
         return (
             <div>
                 <Title title={page}/>
