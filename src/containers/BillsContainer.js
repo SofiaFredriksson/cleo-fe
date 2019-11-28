@@ -8,14 +8,14 @@ export default class BillsContainer extends Component {
         const { bills, addOrRemoveBill } = this.props
 
         return (
-            <div>
+            <>
                 {bills.map(bill => 
                     <BillContainer 
                     addOrRemoveBill={addOrRemoveBill}
                     key={bill.id} 
                     bill={bill}/>
                 )}
-            </div>
+            </>
         )
     }
 }

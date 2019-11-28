@@ -19,7 +19,6 @@ body {
   margin: 0 auto;
   text-align: center;
   outline: auto;
-  // min-width: 50px;
 }
 
 .card:hover{
@@ -30,14 +29,17 @@ body {
   min-width: 45px;
 }
 
-.container {
-  margin: 0 auto;
+.bill-container {
   text-align: center;
   outline: auto;
   outline-color: #333;
-  box-shadow: 10px 8px 10px #888888;
-  max-width: 50%;
+  box-shadow: 10px 8px 10px #888888; 
+  max-width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
   
+  padding: 10px;
 }
 
 .icon-img {
@@ -51,10 +53,8 @@ body {
 
 
 .button-div {
-  width: 25%;
   margin: 0 auto;
   text-align: center;
-  // outline: auto;
 }
 
 .button-div button{

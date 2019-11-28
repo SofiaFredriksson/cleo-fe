@@ -16,7 +16,7 @@ export default class BillContainer extends Component {
     render() {
         const { bill, addOrRemoveBill } = this.props
         return ( 
-            <div className="container">
+            <div className="bill-container">
                 <>
                     <Bill 
                     {...bill} 

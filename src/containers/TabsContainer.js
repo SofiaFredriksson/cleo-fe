@@ -18,15 +18,15 @@ export default class Tabs extends Component {
         .then(bills => this.setState({
             bills,
         }))
+        .catch((error) => {
+            console.log(error)
+          });
     }
 
     specificBills = (type) => {
         return this.state.bills.filter(bill => bill.isBill === type)
     }
 
-    // potentialBills = () => {
-    //     return this.state.bills.filter(bill => bill.isBill === false)
-    // }
 
     setPage = (page) => {
         this.setState({
@@ -54,13 +54,17 @@ export default class Tabs extends Component {
     addOrRemoveBill = (id, data) => {
         API.updateBill(id, data)
         .then(updatedBill => this.setState({
-            bills: this.state.bills.map(bill => {
+            bills: [...this.state.bills.map(bill => {
                 if (bill.id !== updatedBill.id) return bill;
                 return updatedBill;
-              })
+              })]
         })
-        )
+        ).catch((error) => {
+            console.log(error)
+          });
     }
+
+  
 
     render() {
         const { page } = this.state
