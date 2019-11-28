@@ -54,10 +54,9 @@ export default class Tabs extends Component {
     addOrRemoveBill = (id, data) => {
         API.updateBill(id, data)
         .then(updatedBill => this.setState({
-            bills: [...this.state.bills.map(bill => {
-                if (bill.id !== updatedBill.id) return bill;
-                return updatedBill;
-              })]
+            bills: this.state.bills.map(bill => {
+                return bill.id === updatedBill.id ?  {...updatedBill, isBill: data} : bill
+              })
         })
         ).catch((error) => {
             console.log(error)
