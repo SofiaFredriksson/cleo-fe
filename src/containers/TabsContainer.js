@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import API from "../services/api/API"
 import Bills from "./BillsContainer"
-import Transactions from "./TransactionsController"
 import TabsButton from "../components/Button"
 import Title from "../components/Title"
 import Loader from "../components/Loader"
@@ -38,12 +37,12 @@ export default class Tabs extends Component {
     renderComponents = () => {
         switch (this.state.page) {
             case "Bills":
-                return <Bills 
+                return <Bills
                 addOrRemoveBill={this.addOrRemoveBill}
                 bills={this.activeBills()}
                 />
             case "Transactions":
-                return <Transactions
+                return <Bills
                 addOrRemoveBill={this.addOrRemoveBill}
                 bills={this.potentialBills()}
                 />
