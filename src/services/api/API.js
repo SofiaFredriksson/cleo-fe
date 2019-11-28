@@ -5,7 +5,6 @@ const BILLS_URL = `${APIConstants.base}bills`;
 export const getBills = () => fetch(BILLS_URL).then(res => res.json());
 
 export const updateBill = (id, data) => {
-
   return fetch(`${BILLS_URL}/${id}`,{
       method: "PATCH",
       headers: {

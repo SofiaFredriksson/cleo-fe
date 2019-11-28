@@ -4,7 +4,7 @@ export default class Transaction extends Component {
     render() {
         const { amount, date } = this.props
         return (
-            <div className="card">
+            <div className="transaction-card">
                 <div className="card-body">
                     <h4 className="card-title">
                         {date}
