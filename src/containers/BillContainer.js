@@ -14,27 +14,26 @@ export default class BillContainer extends Component {
         })
     }
     render() {
-        const { bill } = this.props
-        return (
-            
+        const { bill, addOrRemoveBill } = this.props
+        return ( 
             <div className="card">
                 <>
                     <Bill 
                     {...bill} 
                     handleClick={this.clickedCondition}
-                    
                     /> 
+                    
                     <Button
-                    clickHandler={() => console.log("YOYOYO")}
+                    clickHandler={() => addOrRemoveBill(bill.id, bill.isBill ? false : true)}
                     input={bill.isBill ? "Remove Bill" : "Add as Bill"}
                     />
                 </>
                 {
-                this.state.clicked 
-                 ?
-                bill.transactions.map(transaction => <Transaction key={transaction.id} {...transaction}/>)
-                :
-                null
+                    this.state.clicked 
+                    ?
+                        bill.transactions.map(transaction => <Transaction key={transaction.id} {...transaction}/>)
+                    :
+                        null
                 }
             </div>
             

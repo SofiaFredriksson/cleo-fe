@@ -3,7 +3,6 @@ import loader from "../assets/loader.gif"
 
 export default function Loader() {
     return (
-            <img src={loader} alt="loading..." />
-
+        <img src={loader} alt="loading..." />
     )
 }

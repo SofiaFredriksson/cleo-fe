@@ -9,13 +9,10 @@ export default class Transaction extends Component {
                     <h4 className="card-title">
                         {date}
                     </h4>
-
                     <p>
                         Amount: {amount}
                     </p>
-    
                 </div>
-                
             </div>
         )
     }

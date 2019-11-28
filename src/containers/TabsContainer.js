@@ -12,14 +12,12 @@ export default class Tabs extends Component {
     state = {
         bills: [],
         page: "Bills",
-
     }
 
     componentDidMount(){
         API.getBills()
         .then(bills => this.setState({
             bills,
-
         }))
     }
 
@@ -29,7 +27,6 @@ export default class Tabs extends Component {
 
     potentialBills = () => {
         return this.state.bills.filter(bill => bill.isBill === false)
-
     }
 
     setPage = (page) => {
@@ -42,29 +39,45 @@ export default class Tabs extends Component {
         switch (this.state.page) {
             case "Bills":
                 return <Bills 
-                    bills={this.activeBills()}
+                addOrRemoveBill={this.addOrRemoveBill}
+                bills={this.activeBills()}
                 />
             case "Transactions":
                 return <Transactions
-                    bills={this.potentialBills()}
+                addOrRemoveBill={this.addOrRemoveBill}
+                bills={this.potentialBills()}
                 />
             default:
-            return <Loader />
-                
+            return <Loader />   
         }
+    }
+
+    addOrRemoveBill = (id, data) => {
+        API.updateBill(id, data)
+        .then(updatedBill => this.setState({
+            bills: this.state.bills.map(bill => {
+                if (bill.id !== updatedBill.id) return bill;
+                return updatedBill;
+              })
+        })
+        )
     }
 
     render() {
         const { page } = this.state
-
         const pageCondition = (page === "Bills" ? "Transactions" : "Bills")
         
         return (
             <div>
-                <Title title={page}/>
+                <Title 
+                title={page}
+                />
+
                 <TabsButton 
                 input={`View ${pageCondition}`}  
-                clickHandler={() => this.setPage(pageCondition)}/>
+                clickHandler={() => this.setPage(pageCondition)}
+                />
+                
                 {this.renderComponents()}
             </div>
         )

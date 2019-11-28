@@ -4,13 +4,14 @@ import  BillContainer from  "./BillContainer"
 
 export default class TransactionsController extends Component {
     render() {
-
-        const { bills } = this.props
-
+        const { bills, addOrRemoveBill } = this.props
         return (
             <div>
                 {bills.map(bill => 
-                    <BillContainer bill={bill}/>
+                    <BillContainer 
+                    key={bill.id}
+                    addOrRemoveBill={addOrRemoveBill}
+                    bill={bill}/>
                 )}
             </div>
         )

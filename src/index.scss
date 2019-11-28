@@ -10,6 +10,9 @@ body {
   justify-content: center;
 }
 
+.app{
+  margin-bottom: 10px;
+}
 
 .card{
   width: 50%;
@@ -30,7 +33,7 @@ body {
 .page-button {
   padding:10px 20px;
 	border-radius:3px;
-	background:#ccc;
+	background:pink;
 	font-size:16px;
   color:#333;
   margin: 0 auto;
@@ -38,6 +41,11 @@ body {
 
 .header {
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: pink;
   padding: 20px 10px;
+  max-height: 100px;
+}
+
+.header img {
+  max-width: 50px;
 }

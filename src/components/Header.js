@@ -5,7 +5,6 @@ export default function Header() {
     return (
         <div className="header">
             <img
-            className="icon-img"
             src={cleoCoin}
             alt="welcome"
             />

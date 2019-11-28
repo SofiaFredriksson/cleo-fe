@@ -1,6 +1,6 @@
 import React from 'react'
 import { imgUrl } from "../services/shared/constants"
-import Button from "./Button"
+
 
 export default function Bill({name, transactions, handleClick}) {
     return (
@@ -12,16 +12,14 @@ export default function Bill({name, transactions, handleClick}) {
                 </h4>
                 <img 
                 className="icon-img"
+                //some of the image links wer broken so I used another one instead 
                 src={imgUrl.emoji}
                 alt={name}
                 />
                 <p>
                     Transactions: {transactions.length}
                 </p>
-                
-
-            </div>
-            
+            </div>  
         </div>
     )
 }

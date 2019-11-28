@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
-import Bill from "../components/Bill"
-import BillContainer from './BillContainer'
-// import Loader from "../components/Loader"
 
+import BillContainer from './BillContainer'
 
 export default class BillsContainer extends Component {
     render() {
 
-        const { bills } = this.props
+        const { bills, addOrRemoveBill } = this.props
 
         return (
             <div>
                 {bills.map(bill => 
-                    <BillContainer key={bill.id} bill={bill}/>
+                    <BillContainer 
+                    addOrRemoveBill={addOrRemoveBill}
+                    key={bill.id} 
+                    bill={bill}/>
                 )}
             </div>
         )
