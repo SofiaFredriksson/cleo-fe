@@ -20,13 +20,13 @@ export default class Tabs extends Component {
         }))
     }
 
-    activeBills = () => {
-        return this.state.bills.filter(bill => bill.isBill === true)
+    specificBills = (type) => {
+        return this.state.bills.filter(bill => bill.isBill === type)
     }
 
-    potentialBills = () => {
-        return this.state.bills.filter(bill => bill.isBill === false)
-    }
+    // potentialBills = () => {
+    //     return this.state.bills.filter(bill => bill.isBill === false)
+    // }
 
     setPage = (page) => {
         this.setState({
@@ -39,12 +39,12 @@ export default class Tabs extends Component {
             case "Bills":
                 return <Bills
                 addOrRemoveBill={this.addOrRemoveBill}
-                bills={this.activeBills()}
+                bills={this.specificBills(true)}
                 />
             case "Transactions":
                 return <Bills
                 addOrRemoveBill={this.addOrRemoveBill}
-                bills={this.potentialBills()}
+                bills={this.specificBills(false)}
                 />
             default:
             return <Loader />   
@@ -67,7 +67,7 @@ export default class Tabs extends Component {
         const pageCondition = (page === "Bills" ? "Transactions" : "Bills")
         
         return (
-            <div>
+            <>
                 <Title 
                 title={page}
                 />
@@ -78,7 +78,7 @@ export default class Tabs extends Component {
                 />
                 
                 {this.renderComponents()}
-            </div>
+            </>
         )
     }
 }

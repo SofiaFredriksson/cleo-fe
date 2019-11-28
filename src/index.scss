@@ -19,6 +19,24 @@ body {
   margin: 0 auto;
   text-align: center;
   outline: auto;
+  // min-width: 50px;
+}
+
+.card:hover{
+  background: rgb(247, 230, 232);
+}
+
+.card-body{
+  min-width: 45px;
+}
+
+.container {
+  margin: 0 auto;
+  text-align: center;
+  outline: auto;
+  outline-color: #333;
+  box-shadow: 10px 8px 10px #888888;
+  max-width: 50%;
   
 }
 
@@ -30,13 +48,25 @@ body {
   text-align: center;
 }
 
-.page-button {
+
+
+.button-div {
+  width: 25%;
+  margin: 0 auto;
+  text-align: center;
+  // outline: auto;
+}
+
+.button-div button{
   padding:10px 20px;
 	border-radius:3px;
 	background:pink;
 	font-size:16px;
   color:#333;
   margin: 0 auto;
+}
+.button-div button:hover {
+  background: rgb(247, 230, 232);
 }
 
 .header {

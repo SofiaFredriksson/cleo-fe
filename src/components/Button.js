@@ -2,9 +2,8 @@ import React from 'react'
 
 export default function Button({input, clickHandler}) {
     return (
-        <div className="card">
+        <div className="button-div">
             <button
-            className="page-button"
             onClick={clickHandler}
             >
             {input}
