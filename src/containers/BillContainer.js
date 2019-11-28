@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import Bill from "../components/Bill"
 import Transaction from "../components/Transaction"
+import Button from '../components/Button'
 
 export default class BillContainer extends Component {
     state = {
         clicked: false
     }
 
-    handleClick = () => {
+    clickedCondition = () => {
         this.setState({
             clicked: !this.state.clicked
         })
@@ -15,16 +16,29 @@ export default class BillContainer extends Component {
     render() {
         const { bill } = this.props
         return (
-            this.state.clicked 
-            ?
-            <div className="card"
-            onClick={() => this.handleClick()}>
-                <Bill {...bill} handleClick={this.handleClick}/>
-                {bill.transactions.map(transaction => <Transaction {...transaction}/>)}
-
+            
+            <div className="card">
+                <>
+                    <Bill 
+                    {...bill} 
+                    handleClick={this.clickedCondition}
+                    
+                    /> 
+                    <Button
+                    clickHandler={() => console.log("YOYOYO")}
+                    input={bill.isBill ? "Remove Bill" : "Add as Bill"}
+                    />
+                </>
+                {
+                this.state.clicked 
+                 ?
+                bill.transactions.map(transaction => <Transaction key={transaction.id} {...transaction}/>)
+                :
+                null
+                }
             </div>
-            :
-            <Bill {...bill} handleClick={this.handleClick}/>
+            
+
         )
     }
 }

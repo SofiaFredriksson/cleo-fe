@@ -63,8 +63,8 @@ export default class Tabs extends Component {
             <div>
                 <Title title={page}/>
                 <TabsButton 
-                page={pageCondition}  
-                setPage={() => this.setPage(pageCondition)}/>
+                input={`View ${pageCondition}`}  
+                clickHandler={() => this.setPage(pageCondition)}/>
                 {this.renderComponents()}
             </div>
         )

@@ -12,7 +12,7 @@ export default class BillsContainer extends Component {
         return (
             <div>
                 {bills.map(bill => 
-                    <BillContainer bill={bill}/>
+                    <BillContainer key={bill.id} bill={bill}/>
                 )}
             </div>
         )

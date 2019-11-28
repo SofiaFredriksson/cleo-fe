@@ -1,7 +1,8 @@
 import React from 'react'
 import { imgUrl } from "../services/shared/constants"
+import Button from "./Button"
 
-export default function Bill({name, iconUrl, isBill, transactions, handleClick}) {
+export default function Bill({name, transactions, handleClick}) {
     return (
         <div className="card"
         onClick={() =>  handleClick()}>
@@ -17,6 +18,7 @@ export default function Bill({name, iconUrl, isBill, transactions, handleClick})
                 <p>
                     Transactions: {transactions.length}
                 </p>
+                
 
             </div>
             

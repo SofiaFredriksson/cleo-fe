@@ -1,13 +1,13 @@
 import React from 'react'
 
-export default function Button({page, setPage}) {
+export default function Button({input, clickHandler}) {
     return (
         <div className="card">
             <button
             className="page-button"
-            onClick={setPage}
+            onClick={clickHandler}
             >
-            {page}
+            {input}
             </button>
         </div>
     )
