@@ -1,0 +1,20 @@
+@import "../App.scss";
+
+.card {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  outline: auto;
+}
+
+.card:hover {
+  background: $background-light-hover;
+}
+
+.card-body {
+  min-width: 45px;
+}
+
+img {
+  width: 50%;
+}

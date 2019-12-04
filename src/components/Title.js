@@ -1,11 +1,10 @@
-import React from 'react'
+import React from "react";
+import "./Title.scss";
 
-export default function Title({title}) {
-    return (
-        <div>
-            <h1 className="title">
-                {title}
-            </h1>
-        </div>
-    )
+export default function Title({ title }) {
+  return (
+    <div>
+      <h1>{title}</h1>
+    </div>
+  );
 }

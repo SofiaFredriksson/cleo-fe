@@ -140,7 +140,7 @@
       "categoryId": 3,
       "iconUrl": null,
       "id": "5a5cab3bfe33900100fd8ed9",
-      "isBill": false,
+      "isBill": true,
       "name": "Transfer to flatmate",
       "transactions": [
         {

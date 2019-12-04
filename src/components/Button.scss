@@ -1,0 +1,18 @@
+@import "../App.scss";
+
+.button-div {
+  margin: 0 auto;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 3px;
+  background: $background-pink;
+  font-size: 16px;
+  color: $outline-black;
+  margin: 0 auto;
+}
+button:hover {
+  background: $background-light-hover;
+}
