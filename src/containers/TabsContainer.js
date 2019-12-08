@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import API from "../services/api/API";
-import Bills from "./BillsContainer";
-import TabsButton from "../components/Button";
-import Title from "../components/Title";
-import Loader from "../components/Loader";
+import React, { Component } from "react"
+import API from "../services/api/API"
+import Bills from "./BillsContainer"
+import TabsButton from "../components/Button"
+import Title from "../components/Title"
+import Loader from "../components/Loader"
 
 export default class Tabs extends Component {
   state = {
     bills: [],
     page: "Bills"
-  };
+  }
 
   componentDidMount() {
     API.getBills()
@@ -19,19 +19,19 @@ export default class Tabs extends Component {
         })
       )
       .catch(error => {
-        console.log(error);
-      });
+        console.log(error)
+      })
   }
 
   specificBills = type => {
-    return this.state.bills.filter(bill => bill.isBill === type);
-  };
+    return this.state.bills.filter(bill => bill.isBill === type)
+  }
 
   setPage = page => {
     this.setState({
       page
-    });
-  };
+    })
+  }
 
   renderComponents = () => {
     switch (this.state.page) {
@@ -41,18 +41,18 @@ export default class Tabs extends Component {
             addOrRemoveBill={this.addOrRemoveBill}
             bills={this.specificBills(true)}
           />
-        );
-      case "Transactions":
+        )
+      case "Potential bills":
         return (
           <Bills
             addOrRemoveBill={this.addOrRemoveBill}
             bills={this.specificBills(false)}
           />
-        );
+        )
       default:
-        return <Loader />;
+        return <Loader />
     }
-  };
+  }
 
   addOrRemoveBill = (id, data) => {
     API.updateBill(id, data)
@@ -61,18 +61,18 @@ export default class Tabs extends Component {
           bills: this.state.bills.map(bill => {
             return bill.id === updatedBill.id
               ? { ...updatedBill, isBill: data }
-              : bill;
+              : bill
           })
         })
       )
       .catch(error => {
-        console.log(error);
-      });
-  };
+        console.log(error)
+      })
+  }
 
   render() {
-    const { page } = this.state;
-    const pageCondition = page === "Bills" ? "Transactions" : "Bills";
+    const { page } = this.state
+    const pageCondition = page === "Bills" ? "Potential bills" : "Bills"
 
     return (
       <>
@@ -85,6 +85,6 @@ export default class Tabs extends Component {
 
         {this.renderComponents()}
       </>
-    );
+    )
   }
 }
