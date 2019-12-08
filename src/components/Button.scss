@@ -12,6 +12,7 @@ button {
   font-size: 16px;
   color: $outline-black;
   margin: 0 auto;
+  box-shadow: $box-shadow-grey;
 }
 button:hover {
   background: $background-light-hover;

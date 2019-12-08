@@ -4,7 +4,8 @@
   width: 50%;
   margin: 0 auto;
   text-align: center;
-  outline: auto;
+  border-radius: 10px;
+  box-shadow: $box-shadow-grey;
 }
 
 .card:hover {

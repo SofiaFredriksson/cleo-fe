@@ -208,7 +208,7 @@
       "categoryId": 4,
       "iconUrl": "https://pbs.twimg.com/profile_images/1026480580156968960/kpcHBd7s.jpg",
       "id": "5a5cabd4fe33900100fd8edb",
-      "isBill": true,
+      "isBill": false,
       "name": "TFL",
       "transactions": [
         {
