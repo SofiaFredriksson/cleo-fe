@@ -1,21 +1,21 @@
-import React, { Component } from "react";
-import Bill from "../components/Bill";
-import Transaction from "../components/Transaction";
-import Button from "../components/Button";
-import "./BillContainer.scss";
+import React, { Component } from "react"
+import Bill from "../components/Bill"
+import Transaction from "../components/Transaction"
+import Button from "../components/Button"
+import "./BillContainer.scss"
 
 export default class BillContainer extends Component {
   state = {
     clicked: false
-  };
+  }
 
   clickedCondition = () => {
     this.setState({
       clicked: !this.state.clicked
-    });
-  };
+    })
+  }
   render() {
-    const { bill, addOrRemoveBill } = this.props;
+    const { bill, addOrRemoveBill } = this.props
     return (
       <div className="bill-container">
         <>
@@ -34,6 +34,6 @@ export default class BillContainer extends Component {
             ))
           : null}
       </div>
-    );
+    )
   }
 }

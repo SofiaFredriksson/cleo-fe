@@ -23,9 +23,7 @@ export default class Tabs extends Component {
       })
   }
 
-  specificBills = type => {
-    return this.state.bills.filter(bill => bill.isBill === type)
-  }
+  specificBills = type => this.state.bills.filter(bill => bill.isBill === type)
 
   setPage = page => {
     this.setState({
@@ -58,11 +56,9 @@ export default class Tabs extends Component {
     API.updateBill(id, data)
       .then(updatedBill =>
         this.setState({
-          bills: this.state.bills.map(bill => {
-            return bill.id === updatedBill.id
-              ? { ...updatedBill, isBill: data }
-              : bill
-          })
+          bills: this.state.bills.map(bill =>
+            bill.id === updatedBill.id ? { ...updatedBill, isBill: data } : bill
+          )
         })
       )
       .catch(error => {
