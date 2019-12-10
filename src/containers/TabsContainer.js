@@ -40,7 +40,7 @@ export default class Tabs extends Component {
             bills={this.specificBills(true)}
           />
         )
-      case "Potential bills":
+      case "Potential Bills":
         return (
           <Bills
             addOrRemoveBill={this.addOrRemoveBill}
@@ -48,7 +48,7 @@ export default class Tabs extends Component {
           />
         )
       default:
-        return <Loader />
+        return null
     }
   }
 
@@ -68,7 +68,7 @@ export default class Tabs extends Component {
 
   render() {
     const { page } = this.state
-    const pageCondition = page === "Bills" ? "Potential bills" : "Bills"
+    const pageCondition = page === "Bills" ? "Potential Bills" : "Bills"
 
     return (
       <>
